@@ -8,13 +8,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Content Include="..\Figures\bin\Debug\net7.0\Figures.dll">
-        <Link>Figures.dll</Link>
-      </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Figures\Figures.csproj" />
+      <Reference Include="Figures">
+        <HintPath>..\Figures\bin\Debug\net7.0\Figures.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>
