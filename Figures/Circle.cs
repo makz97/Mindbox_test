@@ -2,11 +2,11 @@ namespace Figures;
 
 public class Circle : IFigure
 {
-    public readonly double radius;
+    public readonly PositiveDouble radius;
 
     public Circle(double radius)
     {
-        this.radius = radius;
+        this.radius = (PositiveDouble)radius;
     }
 
     public double GetSquare()
