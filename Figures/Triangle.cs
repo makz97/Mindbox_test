@@ -18,7 +18,7 @@ public class Triangle : IFigure
 
         if (a > b && a > c)
         {
-            if (b + c < a)
+            if (b + c <= a)
             {
                 throw new ArgumentException("Sum of cathets less then hypotenuse");
             }
@@ -26,7 +26,7 @@ public class Triangle : IFigure
 
         if (b > a && b > c)
         {
-            if (a + c < b)
+            if (a + c <= b)
             {
                 throw new ArgumentException("Sum of cathets less then hypotenuse");
             }
@@ -34,7 +34,7 @@ public class Triangle : IFigure
 
         if (c > b && c > a)
         {
-            if (a + b < c)
+            if (a + b <= c)
             {
                 throw new ArgumentException("Sum of cathets less then hypotenuse");
             }
@@ -51,8 +51,6 @@ public class Triangle : IFigure
 
     public bool IsRight()
     {
-        if (A == 0 || B == 0 || C == 0) return false;
-
         return Math.Abs(C * C - (A * A + B * B)) < TOLERANCE ||
                Math.Abs(A * A - (B * B + C * C)) < TOLERANCE ||
                Math.Abs(B * B - (A * A + C * C)) < TOLERANCE;

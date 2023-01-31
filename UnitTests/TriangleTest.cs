@@ -48,12 +48,21 @@ public class TriangleTest
     [TestMethod]
     public void IncorrectInput()
     {
-        var a = -3.5;
-        var b = -6.5;
-        var c = -5.7;
         Assert.ThrowsException<ArgumentOutOfRangeException>(() =>
         {
-            var triangle = new Triangle(a, b, c);
+            var triangle = new Triangle(-3.5, -6.5, -5.7);
+        });
+        Assert.ThrowsException<ArgumentException>(() =>
+        {
+            var triangle = new Triangle(10, 5, 3);
+        });
+        Assert.ThrowsException<ArgumentException>(() =>
+        {
+            var triangle = new Triangle(5, 10, 3);
+        });
+        Assert.ThrowsException<ArgumentException>(() =>
+        {
+            var triangle = new Triangle(5, 3, 10);
         });
     }
 }
